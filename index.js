@@ -15,7 +15,9 @@ module.exports =
         if ( obj && typeof obj === 'object' ) {
             for (key in obj) {
                 if (obj.hasOwnProperty(key)) {
-                    mirrored[key] = key;
+                    if(mirrored[key]==null){
+                        mirrored[key] = key;    
+                    }
                 }
             }
         }
