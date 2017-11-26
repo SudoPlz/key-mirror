@@ -15,8 +15,11 @@ module.exports =
         if ( obj && typeof obj === 'object' ) {
             for (key in obj) {
                 if (obj.hasOwnProperty(key)) {
-                    if(mirrored[key]==null){
-                        mirrored[key] = key;    
+                    var objValue = obj[key];
+                    if(objValue == null){
+                        mirrored[key] = key;
+                    } else {
+                        mirrored[key] = objValue;
                     }
                 }
             }
